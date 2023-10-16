@@ -35,3 +35,18 @@ exports.getContact = async (req, res) => {
     });
   }
 };
+
+exports.deleteContact = async (req, res) => {
+  try {
+    const message = await Message.findByIdAndDelete();
+    res.status(200).json({
+      success: true,
+      message,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get("/getMessage", getContact);
 router.post("/sendMessage", postContact);
+router.post("/deleteMessage", deleteContact);
 
 module.exports = router;
