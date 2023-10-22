@@ -17,10 +17,6 @@ const contactSchema = new mongoose.Schema({
     required: [true, "Please Enter your email"],
     validate: [validator.isEmail, "Please enter a valid email"],
   },
-  subject: {
-    type: String,
-    required: [true, "Please enter a subject"],
-  },
   message: {
     type: String,
     required: [true, "Please enter a message"],

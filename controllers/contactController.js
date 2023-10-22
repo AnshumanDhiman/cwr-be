@@ -8,7 +8,6 @@ exports.postContact = async (req, res) => {
       lastName,
       message,
       email,
-      subject,
     });
     await msg.save();
 
@@ -37,8 +36,10 @@ exports.getContact = async (req, res) => {
 };
 
 exports.deleteContact = async (req, res) => {
+  const id = req.params.id;
+  console.log(id);
   try {
-    const message = await Message.findByIdAndDelete();
+    const message = await Message.findByIdAndDelete(id);
     res.status(200).json({
       success: true,
       message,

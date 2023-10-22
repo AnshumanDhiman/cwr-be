@@ -12,7 +12,7 @@ app.use(cors());
 
 connectDB();
 
-app.use("/api/v1", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
